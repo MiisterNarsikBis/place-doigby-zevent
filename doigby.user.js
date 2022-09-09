@@ -131,7 +131,7 @@ const checkVersion = () => {
 
 }
 const showUpdate = (version) => {
-    if(document.getElementById("kcorp-update")) return;
+    if(document.getElementById("doig-update")) return;
 
     const update = document.createElement("div");
     update.style.position = "fixed";
@@ -148,7 +148,7 @@ const showUpdate = (version) => {
     update.style.borderRadius = "10px";
     update.style.fontSize = "1.3em";
     update.style.cursor = "pointer";
-    update.id = "kcorp-update";
+    update.id = "doig-update";
 
     let message = document.createTextNode(f("update_available", GM_info.script.version, version));
     update.appendChild(message);
@@ -161,7 +161,7 @@ const showUpdate = (version) => {
 }
 
 (async function() {
-    log("Loading KCorp module");
+    log("Loading Doigby module");
 
     if (window.top !== window.self) {
         const overlayURL = () => OVERLAY_URL+(opts.ENABLE_IMGNOCACHE ? "?t="+new Date().getTime() : "");
