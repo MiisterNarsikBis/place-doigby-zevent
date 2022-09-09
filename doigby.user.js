@@ -131,7 +131,7 @@ const checkVersion = () => {
 
 }
 const showUpdate = (version) => {
-    if(document.getElementById("doig-update")) return;
+    if(document.getElementById("doug-update")) return;
 
     const update = document.createElement("div");
     update.style.position = "fixed";
@@ -148,7 +148,7 @@ const showUpdate = (version) => {
     update.style.borderRadius = "10px";
     update.style.fontSize = "1.3em";
     update.style.cursor = "pointer";
-    update.id = "doig-update";
+    update.id = "doug-update";
 
     let message = document.createTextNode(f("update_available", GM_info.script.version, version));
     update.appendChild(message);
@@ -162,28 +162,27 @@ const showUpdate = (version) => {
 
 (async function() {
     log("Loading Doigby module");
-
-    if (window.top !== window.self) {
+ if (window.top == window.self) {
         const overlayURL = () => OVERLAY_URL+(opts.ENABLE_IMGNOCACHE ? "?t="+new Date().getTime() : "");
         log({opts});
 
         window.addEventListener("load", () => {
-            log("Searching embed");
-            let embed = document.getElementsByTagName("mona-lisa-embed");
+            log("Searching game");
+            let embed = document.getElementsByClassName("game")[0];
             if ("undefined" === typeof embed || embed.length < 1) return;
-            log("Found embed");
+            log("Found game");
+
+            log("Searching game-container__inner");
+            let canvas = embed.firstChild.firstChild.firstChild;
+            if ("undefined" === typeof canvas || canvas.length < 1) return;
+            log("Found game-container__inner");
 
             log("Searching canvas");
-            let canvas = embed[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-canvas");
-            if ("undefined" === typeof canvas || canvas.length < 1) return;
+            let canvasContainer = canvas.firstChild;
+            if ("undefined" === typeof canvasContainer || canvasContainer.length < 1) return;
             log("Found canvas");
 
-            log("Searching canvasContainer");
-            let canvasContainer = canvas[0].shadowRoot.children[0].getElementsByTagName("canvas");
-            if ("undefined" === typeof canvasContainer || canvasContainer.length < 1) return;
-            log("Found canvasContainer");
-
-            let overlay, timer;
+            let overlay, timer, target;
             const updateOverlaySrc = () => {
                 overlay.src = overlayURL();
             }
@@ -203,12 +202,19 @@ const showUpdate = (version) => {
                 overlay.style.left = 0;
                 overlay.style.top = 0;
                 overlay.style.imageRendering = "pixelated";
-                overlay.style.width = "2000px";
-                overlay.style.height = "2000px";
+                overlay.style.width = "500px";
+                overlay.style.height = "500px";
                 overlay.style.opacity = + opts.OVERLAY_STATE;
-                
-                canvasContainer[0].parentNode.appendChild(overlay);
+                overlay.style.background = "none";
+
+                canvas.appendChild(overlay);
                 log("Overlay reloaded");
+                log("Adjusting target");
+
+                target = document.getElementsByClassName("target")[0];
+                target.style.zIndex = 1000;
+
+                log("Target adjusted");
             }
 
             const showUi = () => {
@@ -251,7 +257,7 @@ const showUpdate = (version) => {
                 control.style.left = "90px";
                 control.style.top = "16px";
                 control.style.maxWidth = "150px";
-                control.id = "kcorp-controls";
+                control.id = "doug-controls";
 
                 // Update Btn
                 const updateBtn = document.createElement("button");
@@ -347,13 +353,6 @@ const showUpdate = (version) => {
 
                 slider.addEventListener("input", (event) => handleSlider(event));
 
-                // Discord Btn
-                const discordBtn = document.createElement("button");
-                discordBtn.innerHTML = f("join_discord");
-                defaultStyle(discordBtn);
-                defaultBtn(discordBtn);
-                discordBtn.addEventListener("click", () => open(DISCORD_URL));
-
                 const langDiv = document.createElement("div");
                 defaultBlock(langDiv);
                 for(let lang of allowedLangs){
@@ -384,10 +383,10 @@ const showUpdate = (version) => {
                 }
                 // Version
                 const credits = document.createElement("div");
-                credits.id = "kc-credits";
+                credits.id = "doug-credits";
 
                 const versionSpan = document.createElement("span");
-                versionSpan.innerHTML = f("by_shadow_team", GM_info.script.version);
+                versionSpan.innerHTML = GM_info.script.version;
                 versionSpan.style.position = "fixed";
                 versionSpan.style.bottom = "10px";
                 versionSpan.style.right = "10px";
@@ -401,13 +400,12 @@ const showUpdate = (version) => {
                 control.appendChild(toggleAutorefreshBtn);
                 control.appendChild(toggleNocacheBtn);
                 control.appendChild(sliderBlock);
-                control.appendChild(discordBtn);
                 control.appendChild(langDiv);
 
-                embed[0].parentNode.appendChild(control);
+                embed.parentNode.appendChild(control);
 
                 credits.appendChild(versionSpan);
-                embed[0].parentNode.appendChild(credits);
+                embed.parentNode.appendChild(credits);
                 log("UI Loaded");
             }
 
@@ -416,7 +414,7 @@ const showUpdate = (version) => {
             showUi();
         }, false);
     } else checkVersion()
-    log("KCorp module loaded");
+    log("Doug module loaded");
 })();
 
 
