@@ -15,7 +15,7 @@
 // ==/UserScript==
 
 // credits to the osu! logo team for script base !
-const DEBUG = false;
+const DEBUG = true;
 
 const UPDATE_URL = GM_info.script.updateURL;
 const DISCORD_URL = "https://discord.gg/doigby";
