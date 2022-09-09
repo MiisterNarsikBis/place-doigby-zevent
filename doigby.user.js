@@ -19,8 +19,8 @@ const DEBUG = true;
 
 const UPDATE_URL = GM_info.script.updateURL;
 const DISCORD_URL = "https://discord.gg/doigby";
-const OVERLAY_URL = "https://github.com/MiisterNarsikBis/reddit-place-doigby-zevent/main/overlay.png";
-const VERSION_URL = "https://github.com/MiisterNarsikBis/reddit-place-doigby-zevent/main/version.json";
+const OVERLAY_URL = "https://raw.githubusercontent.com/MiisterNarsikBis/reddit-place-doigby-zevent/main/overlay.png";
+const VERSION_URL = "https://raw.githubusercontent.com/MiisterNarsikBis/reddit-place-doigby-zevent/main/version.json";
 const REDDIT_URL = "https://new.reddit.com/r/place/";
 
 const allowedLangs = ['fr', 'en'];
