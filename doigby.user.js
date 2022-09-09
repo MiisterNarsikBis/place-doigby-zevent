@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Zevent Place - Armée de Doigby
 // @namespace    https://github.com/MiisterNarsikBis/reddit-place-doigby-zevent
-// @version      0.1
+// @version      0.3
 // @description  On va récuperer ce qui nous est dû de droit.
 // @author       MiisterNarsik
 // @match        https://place.zevent.fr/*
@@ -22,6 +22,10 @@ const DISCORD_URL = "https://discord.gg/doigby";
 const OVERLAY_URL = "https://raw.githubusercontent.com/MiisterNarsikBis/reddit-place-doigby-zevent/main/overlay.png";
 const VERSION_URL = "https://raw.githubusercontent.com/MiisterNarsikBis/reddit-place-doigby-zevent/main/version.json";
 const REDDIT_URL = "https://new.reddit.com/r/place/";
+
+//Mise en place du const car ça va changer dans l'évent :clown:
+const WIDTH_PLACE = 500;
+const HEIGHT_PLACE = 500;
 
 const allowedLangs = ['fr', 'en'];
 const defaultOpts = {
@@ -202,8 +206,8 @@ const showUpdate = (version) => {
                 overlay.style.left = 0;
                 overlay.style.top = 0;
                 overlay.style.imageRendering = "pixelated";
-                overlay.style.width = "500px";
-                overlay.style.height = "500px";
+                overlay.style.width = WIDTH_PLACE + "px";
+                overlay.style.height = HEIGHT_PLACE + "px";
                 overlay.style.opacity = + opts.OVERLAY_STATE;
                 overlay.style.background = "none";
 
