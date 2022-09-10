@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Zevent Place - Armée de Doigby
 // @namespace    https://github.com/MiisterNarsikBis/place-doigby-zevent
-// @version      0.3
+// @version      0.5
 // @description  On va récuperer ce qui nous est dû de droit.
 // @author       MiisterNarsik
 // @match        https://place.zevent.fr/*
