@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Zevent Place - Armée de Doigby
 // @namespace    https://github.com/MiisterNarsikBis/place-doigby-zevent
-// @version      0.6
+// @version      0.7
 // @description  Doig by by by dans la place
 // @author       MiisterNarsik
 // @match        https://place.zevent.fr/*
@@ -69,7 +69,7 @@ const LANGS = {
         btn_toggle_cache: "{{0}} le cache de l'overlay",
         overlay_opacity: "Opacité de l'overlay",
         join_discord: "Rejoindre le discord de Doigby",
-        by_shadow_team: "Doigby overlay v{{0}} par MiisterNarsik"
+        by_shadow_team: "Doigby overlay version :{{0}}"
     },
     en: {
         update_available: "`Update available v{{0}} > v{{1}} ! Click here to install`",
@@ -85,7 +85,7 @@ const LANGS = {
         btn_toggle_cache: "{{0}} overlay's cache",
         overlay_opacity: "Overlay's opacity",
         join_discord: "Join Doigby discord !",
-        by_shadow_team: "Doigby overlay v{{0}} by MiisterNarsik"
+        by_shadow_team: "Doigby overlay v{{0}}"
     },
 };
 const f = (key, ...vars) => {
