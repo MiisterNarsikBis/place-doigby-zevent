@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Zevent Place - Armée de Doigby
 // @namespace    https://github.com/MiisterNarsikBis/place-doigby-zevent
-// @version      0.5
-// @description  On va récuperer ce qui nous est dû de droit.
+// @version      0.6
+// @description  Doig by by by dans la place
 // @author       MiisterNarsik
 // @match        https://place.zevent.fr/*
 // @match        https://place.zevent.fr/
@@ -69,7 +69,7 @@ const LANGS = {
         btn_toggle_cache: "{{0}} le cache de l'overlay",
         overlay_opacity: "Opacité de l'overlay",
         join_discord: "Rejoindre le discord de Doigby",
-        by_shadow_team: "Doigby overlay v{{0}} par Narsouu"
+        by_shadow_team: "Doigby overlay v{{0}} par MiisterNarsik"
     },
     en: {
         update_available: "`Update available v{{0}} > v{{1}} ! Click here to install`",
@@ -85,7 +85,7 @@ const LANGS = {
         btn_toggle_cache: "{{0}} overlay's cache",
         overlay_opacity: "Overlay's opacity",
         join_discord: "Join Doigby discord !",
-        by_shadow_team: "Doigby overlay v{{0}} by Narsouu"
+        by_shadow_team: "Doigby overlay v{{0}} by MiisterNarsik"
     },
 };
 const f = (key, ...vars) => {
@@ -357,6 +357,12 @@ const showUpdate = (version) => {
 
                 slider.addEventListener("input", (event) => handleSlider(event));
 
+                const discordBtn = document.createElement("button");
+                discordBtn.innerHTML = f("join_discord");
+                defaultStyle(discordBtn);
+                defaultBtn(discordBtn);
+                discordBtn.addEventListener("click", () => open(DISCORD_URL));
+
                 const langDiv = document.createElement("div");
                 defaultBlock(langDiv);
                 for(let lang of allowedLangs){
@@ -390,7 +396,7 @@ const showUpdate = (version) => {
                 credits.id = "doug-credits";
 
                 const versionSpan = document.createElement("span");
-                versionSpan.innerHTML = GM_info.script.version;
+                versionSpan.innerHTML = f("by_shadow_team", GM_info.script.version);
                 versionSpan.style.position = "fixed";
                 versionSpan.style.bottom = "10px";
                 versionSpan.style.left = "10px";
