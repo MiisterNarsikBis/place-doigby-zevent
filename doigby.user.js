@@ -351,7 +351,7 @@ const showUpdate = (version) => {
                 slider.max = 1;
                 slider.step = 0.05;
                 slider.value = opts.OVERLAY_OPACITY;
-                slider.boder = "1px solid rgba(0,0,0,0.3)";
+                slider.border = "1px solid rgba(0,0,0,0.3)";
                 sliderBlock.appendChild(sliderText);
                 sliderBlock.appendChild(slider);
 
@@ -393,7 +393,7 @@ const showUpdate = (version) => {
                 versionSpan.innerHTML = GM_info.script.version;
                 versionSpan.style.position = "fixed";
                 versionSpan.style.bottom = "10px";
-                versionSpan.style.right = "10px";
+                versionSpan.style.left = "10px";
                 defaultStyle(versionSpan);
                 defaultSpan(versionSpan);
 
