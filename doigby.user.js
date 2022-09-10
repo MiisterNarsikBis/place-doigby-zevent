@@ -69,7 +69,7 @@ const LANGS = {
         btn_toggle_cache: "{{0}} le cache de l'overlay",
         overlay_opacity: "Opacité de l'overlay",
         join_discord: "Rejoindre le discord de Doigby",
-        by_shadow_team: "Doigby overlay version :{{0}}"
+        by_shadow_team: "Doigby overlay version : v{{0}}"
     },
     en: {
         update_available: "`Update available v{{0}} > v{{1}} ! Click here to install`",
@@ -410,6 +410,7 @@ const showUpdate = (version) => {
                 control.appendChild(toggleAutorefreshBtn);
                 control.appendChild(toggleNocacheBtn);
                 control.appendChild(sliderBlock);
+                control.appendChild(discordBtn);
                 control.appendChild(langDiv);
 
                 embed.parentNode.appendChild(control);
