@@ -11,6 +11,6 @@ Repris par MiisterNarsik (FORK)
 - **Sur Firefox :** https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/
 - **Sur Opera*GX* :** https://addons.opera.com/en/extensions/details/tampermonkey-beta/
 
-▶️ - **Cliquez sur le lien pour l'installer automatiquement :** https://github.com/MiisterNarsikBis/reddit-place-doigby-zevent/raw/main/doigby.user.js
+▶️ - **Cliquez sur le lien pour l'installer automatiquement :** https://github.com/MiisterNarsikBis/place-doigby-zevent/raw/main/doigby.user.js
 
 ▶️ - Allez sur la page <a href="https://place.zevent.fr/">zevent place</a>

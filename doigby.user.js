@@ -1,16 +1,16 @@
 // ==UserScript==
 // @name         Zevent Place - Armée de Doigby
-// @namespace    https://github.com/MiisterNarsikBis/reddit-place-doigby-zevent
+// @namespace    https://github.com/MiisterNarsikBis/place-doigby-zevent
 // @version      0.3
 // @description  On va récuperer ce qui nous est dû de droit.
 // @author       MiisterNarsik
 // @match        https://place.zevent.fr/*
 // @match        https://place.zevent.fr/
-// @icon         https://raw.githubusercontent.com/MiisterNarsikBis/reddit-place-doigby-zevent/main/icon.jpg
+// @icon         https://raw.githubusercontent.com/MiisterNarsikBis/place-doigby-zevent/main/icon.jpg
 // @grant        none
-// @downloadURL  https://raw.githubusercontent.com/MiisterNarsikBis/reddit-place-doigby-zevent/main/doigby.user.js
-// @updateURL    https://raw.githubusercontent.com/MiisterNarsikBis/reddit-place-doigby-zevent/main/doigby.user.js
-// @supportURL   https://github.com/MiisterNarsikBis/reddit-place-doigby-zevent/issues
+// @downloadURL  https://raw.githubusercontent.com/MiisterNarsikBis/place-doigby-zevent/main/doigby.user.js
+// @updateURL    https://raw.githubusercontent.com/MiisterNarsikBis/place-doigby-zevent/main/doigby.user.js
+// @supportURL   https://github.com/MiisterNarsikBis/place-doigby-zevent/issues
 
 // ==/UserScript==
 
@@ -21,7 +21,7 @@ const UPDATE_URL = GM_info.script.updateURL;
 const DISCORD_URL = "https://discord.gg/doigby";
 const OVERLAY_URL = "https://raw.githubusercontent.com/MiisterNarsikBis/place-doigby-zevent/main/overlay.png";
 const VERSION_URL = "https://raw.githubusercontent.com/MiisterNarsikBis/place-doigby-zevent/main/version.json";
-const REDDIT_URL = "https://new.reddit.com/r/place/";
+const REDDIT_URL = "https://place.zevent.fr/";
 
 //Mise en place du const car ça va changer dans l'évent :clown:
 const WIDTH_PLACE = 500;
