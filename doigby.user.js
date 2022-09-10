@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Zevent Place - Armée de Doigby
 // @namespace    https://github.com/MiisterNarsikBis/place-doigby-zevent
-// @version      0.7
+// @version      0.8
 // @description  Doig by by by dans la place
 // @author       MiisterNarsik
 // @match        https://place.zevent.fr/*
