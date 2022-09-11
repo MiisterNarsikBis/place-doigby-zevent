@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Zevent Place - Armée de Doigby
 // @namespace    https://github.com/MiisterNarsikBis/place-doigby-zevent
-// @version      0.9
+// @version      1.0
 // @description  Doig by by by dans la place
 // @author       MiisterNarsik
 // @match        https://place.zevent.fr/*
@@ -24,8 +24,8 @@ const VERSION_URL = "https://raw.githubusercontent.com/MiisterNarsikBis/place-do
 const REDDIT_URL = "https://place.zevent.fr/";
 
 //Mise en place du const car ça va changer dans l'évent :clown:
-const WIDTH_PLACE = 500;
-const HEIGHT_PLACE = 500;
+const WIDTH_PLACE = 700;
+const HEIGHT_PLACE = 700;
 
 const allowedLangs = ['fr', 'en'];
 const defaultOpts = {
