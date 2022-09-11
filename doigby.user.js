@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Zevent Place - Armée de Doigby
 // @namespace    https://github.com/MiisterNarsikBis/place-doigby-zevent
-// @version      1.0
+// @version      1.1
 // @description  Doig by by by dans la place
 // @author       MiisterNarsik
 // @match        https://place.zevent.fr/*
@@ -68,7 +68,6 @@ const LANGS = {
         btn_autorefresh_overlay: "{{0}} l'auto-refresh de l'overlay ({{1}}s)",
         btn_toggle_cache: "{{0}} le cache de l'overlay",
         overlay_opacity: "Opacité de l'overlay",
-        join_discord: "Rejoindre le discord de Doigby",
         by_shadow_team: "Doigby overlay version : v{{0}}"
     },
     en: {
@@ -84,7 +83,6 @@ const LANGS = {
         btn_autorefresh_overlay: "{{0}} overlay's auto-refresh ({{1}}s)",
         btn_toggle_cache: "{{0}} overlay's cache",
         overlay_opacity: "Overlay's opacity",
-        join_discord: "Join Doigby discord !",
         by_shadow_team: "Doigby overlay v{{0}}"
     },
 };
@@ -357,12 +355,6 @@ const showUpdate = (version) => {
 
                 slider.addEventListener("input", (event) => handleSlider(event));
 
-                const discordBtn = document.createElement("button");
-                discordBtn.innerHTML = f("join_discord");
-                defaultStyle(discordBtn);
-                defaultBtn(discordBtn);
-                discordBtn.addEventListener("click", () => open(DISCORD_URL));
-
                 const langDiv = document.createElement("div");
                 defaultBlock(langDiv);
                 for(let lang of allowedLangs){
@@ -410,7 +402,6 @@ const showUpdate = (version) => {
                 control.appendChild(toggleAutorefreshBtn);
                 control.appendChild(toggleNocacheBtn);
                 control.appendChild(sliderBlock);
-                control.appendChild(discordBtn);
                 control.appendChild(langDiv);
 
                 embed.parentNode.appendChild(control);
